@@ -1,4 +1,4 @@
-*Project Name** - Flask Todo Application with MongoDB
+**Project Name** - Flask Todo Application with MongoDB
 
 ### Overview:
 I have developed a **Todo Application** using **Flask** and **MongoDB** as part of my journey into web development. This simple yet functional application allows users to add and delete todo items, and it stores the data in a MongoDB database. The project includes a sleek HTML template for rendering the data and demonstrates how to integrate Flask with MongoDB for efficient data handling.
