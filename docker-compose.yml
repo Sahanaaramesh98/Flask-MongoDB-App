@@ -1,0 +1,28 @@
+version: '3.8'
+
+# mongo service specifies the MongoDB container, with an image (mongo:latest) pulled from Docker Hub
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongodb_container
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+# flask_app specifies the Flask application container. The depends_on keyword ensures that the Flask app waits for MongoDB to start before it runs
+  flask_app:
+    build: .
+    container_name: flask_container
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      - FLASK_DEBUG=1  # Enable Flask Debug mode
+
+# volumes are used to persist data in MongoDB across container restarts
+volumes:
+  mongo_data:

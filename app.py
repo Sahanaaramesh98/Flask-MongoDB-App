@@ -7,7 +7,7 @@ from bson.objectid import ObjectId
 app = Flask(__name__)
 
 #STEP 3 - setting up MongoDB connection
-client = MongoClient('localhost', 27017)  # default port
+client = MongoClient('mongodb://mongo:27017/')  # Use 'mongo' as the service name
 db = client.flask_database  # This is a MongoDB database
 todos = db.todos  # This is a todos collection
 
@@ -30,4 +30,5 @@ def delete(id):
 #STEP 5 - running the flask app
 if __name__ == "__main__":
     print("Starting Flask app...")
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
+
