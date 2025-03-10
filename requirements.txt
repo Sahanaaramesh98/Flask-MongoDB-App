@@ -1,2 +1,9 @@
 Flask
 pymongo
+flask
+flask_pymongo
+flask_login
+werkzeug
+boto3
+flask_wtf
+wtforms
